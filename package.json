@@ -1,0 +1,20 @@
+{
+    "name": "@pobedit/sri",
+    "version": "0.0.1",
+    "description": "A Subresource Integrity (SRI) generator",
+    "author": "Alexander Abashkin <monolithed@gmail.com>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:pobedit-instruments/sri.git"
+    },
+    "scripts": {
+        "test": "npm prune && tsc && mocha tests"
+    },
+    "devDependencies": {
+        "@types/node": "13.13.1",
+        "@types/mocha": "7.0.2",
+        "mocha": "7.1.1",
+        "typescript": "3.8.3"
+    }
+}
