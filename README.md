@@ -27,11 +27,11 @@ yarn add @pobedit/sri
 ```typescript
 import {generate} from '@pobedit/sri';
 
-generate('./file.txt'); 
+generate('file.txt'); 
 // sha512-z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg==
 ```
 
-Weak signature algorithms like 'md5', 'sha1' or 'des' are not allowed`.
+Weak signature algorithms like 'md5', 'sha1' or 'des' are not allowed.
 
 ## API
 
@@ -42,7 +42,7 @@ Response verification algorithms:
 ```typescript
 import {generate} from '@pobedit/sri';
 
-generate('./file.txt', {algorithm: 'sha256'}); 
+generate('file.txt', {algorithm: 'sha256'}); 
 // sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
 ```
 
