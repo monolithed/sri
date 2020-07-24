@@ -22,32 +22,27 @@ const WEAK_SIGNATURE_ALGORITHMS = [
 function generate(file: string, {
     algorithm = DEFAULT_SIGNATURE_ALGORITHM
 }: Options = {}): Promise<string> {
-    const stream = createReadStream(file, {
-        encoding: FILE_ENCODING
-    });
-
     return new Promise((resolve, reject) => {
-        try {
-            const hash = createHash(algorithm);
+        const stream = createReadStream(file, {
+            encoding: FILE_ENCODING
+        });
 
-            if (WEAK_SIGNATURE_ALGORITHMS.includes(algorithm)) {
-                const error = new Error(`Weak signature algorithm "${algorithm}" is not allowed`);
+        const hash = createHash(algorithm);
 
-                return reject(error);
-            }
+        if (WEAK_SIGNATURE_ALGORITHMS.includes(algorithm)) {
+            const error = new Error(`Weak signature algorithm "${algorithm}" is not allowed`);
 
-            stream.on('error', reject);
-            stream.on('data', data => hash.update(data));
-            stream.on('end', () => {
-                const sri = `${algorithm}-${hash.digest(SRI_ENCODING)}`;
-
-                resolve(sri);
-                hash.end();
-            });
+            return reject(error);
         }
-        catch (error) {
-            reject(error);
-        }
+
+        stream.on('error', reject);
+        stream.on('data', data => hash.update(data));
+        stream.on('end', () => {
+            const integrity = `${algorithm}-${hash.digest(SRI_ENCODING)}`;
+
+            resolve(integrity);
+            hash.end();
+        });
     });
 }
 

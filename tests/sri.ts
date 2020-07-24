@@ -34,4 +34,12 @@ describe('SRI', () => {
             message: 'Weak signature algorithm "md5" is not allowed'
         });
     });
+
+    it('File not found', async () => {
+        const actual = async () => (
+            await generate('unknown.txt')
+        );
+
+        assert.rejects(actual);
+    });
 });

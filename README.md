@@ -22,13 +22,24 @@ npm install @pobedit/sri --save
 yarn add @pobedit/sri
 ```
 
+## Synopsis
+
+```ts
+generate(file: string, {algorithm: string}): Promise<string>;
+```
+
 ## Basic usage
 
 ```typescript
 import {generate} from '@pobedit/sri';
 
-generate('file.txt'); 
-// sha512-z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg==
+generate('file.js')
+    .then((integrity) => {
+            // sha512-z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg==
+    })
+    .catch((error) => {
+        console.error(error);
+    });
 ```
 
 Weak signature algorithms like 'md5', 'sha1' or 'des' are not allowed.
@@ -42,7 +53,7 @@ Response verification algorithms:
 ```typescript
 import {generate} from '@pobedit/sri';
 
-generate('file.txt', {algorithm: 'sha256'}); 
+await generate('file.js', {algorithm: 'sha256'})
 // sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
 ```
 
