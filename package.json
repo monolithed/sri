@@ -1,8 +1,10 @@
 {
     "name": "@monolithed/sri",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "A Subresource Integrity generator",
-    "keywords": ["SRI"],
+    "keywords": [
+        "SRI"
+    ],
     "author": "Alexander Abashkin <monolithed@gmail.com>",
     "license": "MIT",
     "repository": {
@@ -13,8 +15,8 @@
         "test": "npm prune && tsc && mocha tests"
     },
     "devDependencies": {
-        "@types/node": "13.13.1",
         "@types/mocha": "7.0.2",
+        "@types/node": "13.13.1",
         "mocha": "7.1.1",
         "typescript": "3.8.3"
     }
