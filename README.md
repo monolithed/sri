@@ -1,6 +1,6 @@
-# @pobedit/sri
+# @monolithed/sri
 
-[![Build Status](https://travis-ci.org/pobedit-instruments/sri.png)](https://travis-ci.org/pobedit-instruments/sri)
+[![Build Status](https://travis-ci.org/monolithed/sri.png)](https://travis-ci.org/monolithed/sri)
 [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE.txt)
 
 
@@ -13,13 +13,13 @@ Install with npm or Yarn:
 **npm**:
 
 ```
-npm install @pobedit/sri --save
+npm install @monolithed/sri --save
 ```
 
 **Yarn**:
 
 ```
-yarn add @pobedit/sri
+yarn add @monolithed/sri
 ```
 
 ## Synopsis
@@ -31,7 +31,7 @@ generate(file: string, {algorithm: string}): Promise<string>;
 ## Basic usage
 
 ```typescript
-import {generate} from '@pobedit/sri';
+import {generate} from '@monolithed/sri';
 
 generate('file.js')
     .then((integrity) => {
@@ -51,7 +51,7 @@ Weak signature algorithms like 'md5', 'sha1' or 'des' are not allowed.
 Response verification algorithms:
 
 ```typescript
-import {generate} from '@pobedit/sri';
+import {generate} from '@monolithed/sri';
 
 await generate('file.js', {algorithm: 'sha256'})
 // sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
