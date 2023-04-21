@@ -1,9 +1,5 @@
 # @monolithed/sri
 
-[![Build Status](https://travis-ci.org/monolithed/sri.png)](https://travis-ci.org/monolithed/sri)
-[![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE.txt)
-
-
 A [Subresource Integrity (SRI)](https://w3c.github.io/webappsec-subresource-integrity/#toc) generator.
 
 ## Installation
